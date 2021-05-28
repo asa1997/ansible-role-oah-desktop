@@ -19,7 +19,10 @@
   with_items:
           - apt-get -y update
           - apt-get install -y --no-install-recommends ubuntu-desktop
-          # - reboot
+          - reboot
+  service:
+    name: ssh
+    state: restarted
             #- apt-get -y install xorg
             #- apt-get -y install --no-install-recommends openbox
   when: oah_desktop == 'minimal'  
